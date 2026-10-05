@@ -62,7 +62,7 @@ public class GameBoard {
 			new PropertyCell[getPropertyNumberForColor(color)];
 		int counter = 0;
 		for (int i = 0; i < getCellNumber(); i++) {
-			Cell c = getCell(i);
+			IPoperty c = getCell(i);
 			if(c instanceof PropertyCell) {
 				PropertyCell pc = (PropertyCell)c;
 				if(pc.getColorGroup().equals(color)) {
@@ -82,9 +82,9 @@ public class GameBoard {
 		return 0;
 	}
 
-	public Cell queryCell(String string) {
+	public IPoperty queryCell(String string) {
 		for(int i = 0; i < cells.size(); i++){
-			Cell temp = (Cell)cells.get(i); 
+			IPoperty temp = (IPoperty)cells.get(i); 
 			if(temp.getName().equals(string)) {
 				return temp;
 			}
@@ -94,7 +94,7 @@ public class GameBoard {
 	
 	public int queryCellIndex(String string){
 		for(int i = 0; i < cells.size(); i++){
-			Cell temp = (Cell)cells.get(i); 
+			IPoperty temp = (IPoperty)cells.get(i); 
 			if(temp.getName().equals(string)) {
 				return i;
 			}
